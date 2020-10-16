@@ -75,3 +75,11 @@ function toggleSelect(event){
   //Verificar se é sim ou não
   input.value = button.dataset.value
 }
+
+//Validar se marcou um lugar no mapa
+function validate(event) {
+   if(document.querySelector('[name=lat]').value == '' || document.querySelector('[name=lng]').value == ''){
+    event.preventDefault()
+    alert('Selecione um ponto no mapa')
+   }
+}

@@ -5,8 +5,17 @@
 // Boolean true or false
 // Array []
 
+const orphanagesSpan = document.querySelectorAll('.orphanages span')
+var lat = 0, lng = 0, count = 0;
+
+orphanagesSpan.forEach(span => {
+  lat = lat + parseFloat(span.dataset.lat);
+  lng = lng + parseFloat(span.dataset.lng);
+  count++;
+})
+
 //Create map
-const map = L.map('mapid').setView([-27.2091294,-49.6379171], 15);
+const map = L.map('mapid').setView([(lat/count),(lng/count)], 15);
 
 // Create and add tileLayer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
@@ -37,7 +46,6 @@ function addMarker({id, name, lat, lng}) {
     
 }
 
-const orphanagesSpan = document.querySelectorAll('.orphanages span')
 orphanagesSpan.forEach( span => {
   //dataset se refere a qualquer "data-" feito lá no html
   const orphanage = {
