@@ -6,16 +6,21 @@
 // Array []
 
 const orphanagesSpan = document.querySelectorAll('.orphanages span')
-var lat = 0, lng = 0, count = 0;
+var lat = 0, lng = 0, count = 0, fitBounds = [[Infinity,Infinity],[-Infinity,-Infinity]];
 
 orphanagesSpan.forEach(span => {
-  lat = lat + parseFloat(span.dataset.lat);
-  lng = lng + parseFloat(span.dataset.lng);
-  count++;
+  var aux = parseFloat(span.dataset.lat);
+  fitBounds[0][0] = Math.min(aux, fitBounds[0][0]);
+  fitBounds[1][0] = Math.max(aux, fitBounds[1][0]);
+  aux = parseFloat(span.dataset.lng);
+  fitBounds[0][1] = Math.min(aux, fitBounds[0][1]);
+  fitBounds[1][1] = Math.max(aux, fitBounds[1][1]);
 })
 
+//var zoom = lat;
+
 //Create map
-const map = L.map('mapid').setView([(lat/count),(lng/count)], 15);
+const map = L.map('mapid').fitBounds(fitBounds);
 
 // Create and add tileLayer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
@@ -55,4 +60,22 @@ orphanagesSpan.forEach( span => {
     lng: span.dataset.lng
   }
   addMarker(orphanage)
+})
+
+let marker;
+
+//Create and add marker
+map.on('click',(event) => {
+  const lat = event.latlng.lat;
+  const lng = event.latlng.lng;
+
+  document.querySelector('[name=lat]').value = lat;
+  document.querySelector('[name=lng]').value = lng;
+
+  // Remove icon
+  marker && map.removeLayer(marker)
+
+  // Add icon layer
+  marker = L.marker([lat, lng], {icon})
+  .addTo(map)
 })
