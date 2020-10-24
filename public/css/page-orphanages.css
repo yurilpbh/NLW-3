@@ -11,8 +11,6 @@ aside {
 
   display: flex;
   flex-direction: column;
-
-  justify-content: space-between;
 }
 
 aside h2{
@@ -22,11 +20,34 @@ aside h2{
 
 aside p{
   margin-top: 2.4rem;
-  font: 400 1.6rem/1.5 'Nunito', sans-serif;
+  font: 400 1.8rem/1.5 'Nunito', sans-serif;
 }
 
-aside footer p{
-  margin-top: .8rem;
+aside footer select {
+  margin-top: 1rem;
+  border: none;
+  font: 700 2.0rem/1.5 'Nunito', sans-serif;
+  color: white;
+  background-color: transparent;
+}
+
+aside footer select:focus {
+  outline: none;
+  border: 1px solid white;
+  border-radius: 2rem;
+}
+
+
+aside footer select:first-child{
+  margin-top: 3.4rem;
+  display: grid;
+}
+
+aside footer select option{
+  border: none;
+  font: 400 1.6rem/1.5 'Nunito', sans-serif;
+  color: white;
+  background-color: #4ac6df;
 }
 
 #mapid{

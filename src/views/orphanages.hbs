@@ -11,9 +11,13 @@
    crossorigin=""/>
 
     <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
- integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
- crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+    <script src="/scripts/cidades-estados-1.4-utf8.js"></script>
 
     <link rel="icon" href="/images/logo-icon.png" />
 
@@ -38,8 +42,14 @@
         </header>
 
         <footer>
-          <strong>Belo Horizonte</strong>
-          <p>Minas Gerais</p>
+          <select id="estado" onclick="getLatLngEstados()"></select>
+          <select id="cidade" onclick="getLatLngCidades()"></select>
+          <script language="JavaScript" type="text/javascript" charset="utf-8">
+            new dgCidadesEstados({
+              cidade: document.getElementById('cidade'),
+              estado: document.getElementById('estado')
+            })
+          </script>
         </footer>
       </aside>
 
@@ -53,8 +63,8 @@
             data-id="{{this.id}}"
             data-name="{{this.name}}"
             data-lat="{{this.lat}}"
-            data-lng="{{this.lng}}"
-          ></span>
+            data-lng="{{this.lng}}" >
+          </span>
 
         {{/each}}
       </div>  

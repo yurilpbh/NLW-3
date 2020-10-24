@@ -1,0 +1,7 @@
+https://code.google.com/archive/p/cidades-estados-js/
+
+Credits to: https://github.com/kelvins/Municipios-Brasileiros/blob/main/json/estados.json
+
+Credits to: https://github.com/fititnt/gis-dataset-brasil
+
+https://blog.indicium.tech/como-criar-mapas-interativos-com-r-e-leaflet-com-dados-do-covid-19/

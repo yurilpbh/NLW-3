@@ -1,0 +1,29 @@
+Na semana passada eu me propus a participar do #NextLevelWeek3 e foi sensacional. E nessa semana eu me desafiei a implementar algo a mais que não fosse somente trocar a proposta do aplicativo.
+
+
+
+Nesse vídeo num primeiro momento trago uma parte do que foi adicionado no 4º e 5º dia. 
+
+- Uma forma de procurar a rota para o orfanato através do google maps;
+
+- Validações no cadastro dos orfanatos;
+
+- Mudanças no back-end como criação das rotas, utilização de handlebars, sqlite para armazenar os dados, consultas ao banco, etc.
+
+
+
+O que eu senti falta, foi que no mapa ficava trabalhoso buscar a localização desejada e ao utilizar o leaftlet (biblioteca do mapa) fica confuso as delimitações das cidades. 
+
+- Criei dois seletores, de forma que o usuário consegue escolher o estado. E a partir dessa escolha a cidade;
+
+- Adicionei demarcações para as cidades, ao escolher o estado.
+
+
+
+Essas alterações podem ser vistas na segunda metade do vídeo.
+
+Quero mais uma vez agradecer à @rocketseat , ao @Mayk Brito e à comunidade do NLW-3 que me deram a possibilidade de ter contato com esse projeto e a partir disso me inspirar a buscar adicionar algo a mais.
+
+
+
+Repositório do projeto: https://github.com/yurilpbh/NLW-3
