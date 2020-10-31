@@ -143,18 +143,18 @@ orphanagesSpan.forEach( span => {
 let marker;
 
 //Create and add marker
-map.on('click',(event) => {
-  const lat = event.latlng.lat;
-  const lng = event.latlng.lng;
+// map.on('click',(event) => {
+//   const lat = event.latlng.lat;
+//   const lng = event.latlng.lng;
 
-  document.querySelector('[name=lat]').value = lat;
-  document.querySelector('[name=lng]').value = lng;
+//   document.querySelector('[name=lat]').value = lat;
+//   document.querySelector('[name=lng]').value = lng;
 
-  // Remove icon
-  marker && map.removeLayer(marker)
+//   // Remove icon
+//   marker && map.removeLayer(marker)
 
-  // Add icon layer
-  marker = L.marker([lat, lng], {icon})
-  .addTo(map)
-})
+//   // Add icon layer
+//   marker = L.marker([lat, lng], {icon})
+//   .addTo(map)
+// })
 
